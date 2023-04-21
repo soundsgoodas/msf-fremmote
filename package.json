@@ -1,6 +1,6 @@
 {
   "name": "msf-fremmote",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bibliotek for å generere fremmøtemal for Musikkens Studieforbund",
   "main": "lib/index.js",
   "types": "src/index.d.ts",
