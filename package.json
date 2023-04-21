@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Bibliotek for å generere fremmøtemal for Musikkens Studieforbund",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
