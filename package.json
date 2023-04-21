@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "Sounds Good AS",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soundsgoodas/msf-fremmote.git"
+  },
   "dependencies": {
     "exceljs": "^4.3.0"
   },
