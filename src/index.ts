@@ -1,5 +1,5 @@
 import Excel from "exceljs";
-import { PersonRow, ReportInput, ReportOutput } from "./types";
+import { TimeslotColumn, PersonRow, ReportInput, ReportOutput } from "./types";
 
 export async function getReport({
   persons,
@@ -24,8 +24,28 @@ export async function getReport({
         it.gender,
         it.yearOfBirth,
       ] as PersonRow),
+      "",
+      ...timeSlots.map(({ attendingUids }) =>
+        attendingUids.includes(it.id) ? "x" : ""
+      ),
     ])
   );
+
+  let colIndex = 11;
+  for (const timeSlot of timeSlots) {
+    const column = worksheet.getColumn(colIndex);
+    column.values = [
+      "",
+      ...([
+        timeSlot.date,
+        timeSlot.time,
+        timeSlot.type,
+        timeSlot.hours,
+        timeSlot.hoursWithoutTeacher,
+      ] as TimeslotColumn),
+    ];
+    colIndex++;
+  }
 
   const buffer = await workbook.xlsx.writeBuffer();
 

@@ -22,9 +22,16 @@ export type PersonRow = [
   yearOfBirth: number
 ];
 
+export type TimeslotColumn = [
+  date: string, // DD-MM-YYYY
+  time: string, // HH:MM
+  type: "Fysisk" | "Digital",
+  hours: number,
+  hoursWithoutTeacher: number
+];
 type Gender = "F" | "M";
 
-interface TimeSlot {
+interface Timeslot {
   date: string; // DD-MM-YYYY
   time: string; // HH:MM
   type: "Fysisk" | "Digital";
@@ -35,7 +42,7 @@ interface TimeSlot {
 
 interface ReportInput {
   persons: Person[];
-  timeSlots: TimeSlot[];
+  timeSlots: Timeslot[];
 }
 interface ReportOutput {
   result: Buffer;

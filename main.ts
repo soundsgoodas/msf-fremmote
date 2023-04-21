@@ -1,9 +1,9 @@
-import { getReport } from "./lib";
-import { Person, ReportOutput, TimeSlot } from "./lib/types";
+import { getReport } from "./src";
+import { Person, ReportOutput, Timeslot } from "./src/types";
 
 async function main() {
   const persons: Person[] = [demoUser1, demoUser2];
-  const timeSlots: TimeSlot[] = [
+  const timeSlots: Timeslot[] = [
     {
       attendingUids: ["1", "2"],
       date: "01-01-2021",
@@ -28,7 +28,6 @@ async function main() {
 }
 
 async function writeReportToFile(report: ReportOutput) {
-  // const base64String = (report.result as Buffer).toString("base64");
   await report.workbook.xlsx.writeFile("./output/result.xlsx");
 }
 const demoUser1: Person = {
@@ -50,6 +49,3 @@ const demoUser2: Person = {
 };
 
 main();
-function writeFileSync(arg0: string, arg1: ArrayBuffer) {
-  throw new Error("Function not implemented.");
-}
