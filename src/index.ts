@@ -1,12 +1,19 @@
 import Excel from "exceljs";
 import { TimeslotColumn, PersonRow, ReportInput, ReportOutput } from "./types";
+import { join } from "path";
 
 export async function getReport({
   persons,
   timeSlots,
 }: ReportInput): Promise<ReportOutput> {
-  const file = "./template/Mal-for-import-av-fremmote.v21.04.2023.xlsx";
+  const file = join(
+    __dirname,
+    "..",
+    "template",
+    "Mal-for-import-av-fremmote.v21.04.2023.xlsx"
+  );
   const workbook = new Excel.Workbook();
+
   await workbook.xlsx.readFile(file);
 
   const worksheet = workbook.worksheets[0];
