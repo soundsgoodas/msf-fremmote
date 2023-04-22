@@ -1,5 +1,5 @@
 import { Buffer, Workbook } from "exceljs";
-interface Person {
+export interface Person {
   id: string;
   name: string;
   address?: string;
@@ -29,9 +29,9 @@ export type TimeslotColumn = [
   hours: number,
   hoursWithoutTeacher: number
 ];
-type Gender = "F" | "M";
+export type Gender = "F" | "M";
 
-interface Timeslot {
+export interface Timeslot {
   date: string; // DD-MM-YYYY
   time: string; // HH:MM
   type: "Fysisk" | "Digital";
@@ -40,11 +40,11 @@ interface Timeslot {
   attendingUids: string[];
 }
 
-interface ReportInput {
+export interface ReportInput {
   persons: Person[];
   timeSlots: Timeslot[];
 }
-interface ReportOutput {
+export interface ReportOutput {
   result: Buffer;
   workbook: Workbook;
 }
