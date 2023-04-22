@@ -47,8 +47,8 @@ export async function getReport({
         timeSlot.date,
         timeSlot.time,
         timeSlot.type,
-        timeSlot.hours,
         timeSlot.hoursWithoutTeacher,
+        timeSlot.hours,
       ] as TimeslotColumn),
     ];
     colIndex++;

@@ -26,10 +26,10 @@ export type TimeslotColumn = [
   date: string, // DD-MM-YYYY
   time: string, // HH:MM
   type: "Fysisk" | "Digital",
-  hours: number,
-  hoursWithoutTeacher: number
+  hoursWithoutTeacher: number,
+  hours: number
 ];
-export type Gender = "F" | "M";
+export type Gender = "K" | "M";
 
 export interface Timeslot {
   date: string; // DD-MM-YYYY
