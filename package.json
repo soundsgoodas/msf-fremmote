@@ -2,7 +2,7 @@
   "name": "msf-fremmote",
   "version": "1.0.3",
   "description": "Bibliotek for å generere fremmøtemal for Musikkens Studieforbund",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "types": "src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +16,10 @@
     "type": "git",
     "url": "git+https://github.com/soundsgoodas/msf-fremmote.git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "exceljs": "^4.3.0"
   },

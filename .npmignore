@@ -1,5 +1,3 @@
-src
-!src/types.d.ts
 main.ts
-tsconfig.josn
+tsconfig.json
 output
