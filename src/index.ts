@@ -53,7 +53,7 @@ export async function getReport({
     ];
     worksheet.getCell(
       `${column.letter}2`
-    ).note = `${timeSlot.name}\n${timeSlot.eventType}`;
+    ).note = `${timeSlot.name}\n${timeSlot.description}`;
     colIndex++;
   }
 
