@@ -38,6 +38,8 @@ export interface Timeslot {
   hoursWithoutTeacher: number;
   hours: number;
   attendingUids: string[];
+  name: string;
+  eventType: string;
 }
 
 export interface ReportInput {
