@@ -39,7 +39,7 @@ export interface Timeslot {
   hours: number;
   attendingUids: string[];
   name: string;
-  eventType: string;
+  description: string;
 }
 
 export interface ReportInput {

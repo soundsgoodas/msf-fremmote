@@ -11,6 +11,8 @@ async function main() {
       hoursWithoutTeacher: 0,
       time: "12:00",
       type: "Fysisk",
+      description: "Rehearsal",
+      name: "Ukentlig korøvelse",
     },
     {
       attendingUids: ["1"],
@@ -19,6 +21,8 @@ async function main() {
       hoursWithoutTeacher: 2,
       time: "14:00",
       type: "Fysisk",
+      description: "Rehearsal",
+      name: "Concert",
     },
   ];
 
@@ -43,7 +47,7 @@ const demoUser2: Person = {
   id: "2",
   name: "Kari Nordmann",
   city: "Oslo",
-  gender: "F",
+  gender: "K",
   yearOfBirth: 1991,
   zip: "1222",
 };

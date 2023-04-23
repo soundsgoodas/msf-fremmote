@@ -51,6 +51,9 @@ export async function getReport({
         timeSlot.hours,
       ] as TimeslotColumn),
     ];
+    worksheet.getCell(
+      `${column.letter}2`
+    ).note = `${timeSlot.name}\n${timeSlot.eventType}`;
     colIndex++;
   }
 
