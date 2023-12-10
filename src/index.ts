@@ -5,6 +5,7 @@ import { join } from "path";
 export async function getReport({
   persons,
   timeSlots,
+  labels,
 }: ReportInput): Promise<ReportOutput> {
   const file = join(
     __dirname,
@@ -55,6 +56,23 @@ export async function getReport({
       `${column.letter}2`
     ).note = `${timeSlot.name}\n${timeSlot.description}`;
     colIndex++;
+  }
+
+  if (typeof labels !== "undefined") {
+    worksheet.name = labels.reportName;
+    worksheet.getCell("B6").value = labels.name;
+    worksheet.getCell("C6").value = labels.address;
+    worksheet.getCell("D6").value = labels.zipCode;
+    worksheet.getCell("E6").value = labels.place;
+    worksheet.getCell("F6").value = labels.emailAddress;
+    worksheet.getCell("G6").value = labels.phone;
+    worksheet.getCell("H6").value = labels.gender;
+    worksheet.getCell("I6").value = labels.yearOfBirth;
+    worksheet.getCell("J2").value = labels.date;
+    worksheet.getCell("J3").value = labels.startTime;
+    worksheet.getCell("J4").value = labels.rehearsalFormat;
+    worksheet.getCell("J5").value = labels.hoursSansTeacher;
+    worksheet.getCell("J6").value = labels.hoursWithTeacher;
   }
 
   const buffer = await workbook.xlsx.writeBuffer();

@@ -45,6 +45,22 @@ export interface Timeslot {
 export interface ReportInput {
   persons: Person[];
   timeSlots: Timeslot[];
+  labels?: {
+    name: string;
+    address: string;
+    zipCode: string;
+    place: string;
+    emailAddress: string;
+    phone: string;
+    gender: string;
+    yearOfBirth: string;
+    date: string;
+    startTime: string;
+    rehearsalFormat: string;
+    hoursWithTeacher: string;
+    hoursSansTeacher: string;
+    reportName: string;
+  };
 }
 export interface ReportOutput {
   result: Buffer;
