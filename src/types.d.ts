@@ -45,7 +45,7 @@ export interface Timeslot {
 export interface ReportInput {
   persons: Person[];
   timeSlots: Timeslot[];
-  clearLabels?: boolean;
+  clearNotes?: boolean;
   labels?: {
     name: string;
     address: string;

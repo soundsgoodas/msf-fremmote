@@ -6,7 +6,7 @@ export async function getReport({
   persons,
   timeSlots,
   labels,
-  clearLabels = false,
+  clearNotes = false,
 }: ReportInput): Promise<ReportOutput> {
   const file = join(
     __dirname,
@@ -76,7 +76,7 @@ export async function getReport({
     worksheet.getCell("J6").value = labels.hoursWithTeacher;
   }
 
-  if (clearLabels) {
+  if (clearNotes) {
     worksheet.getCell("H6").note = "";
     worksheet.getCell("J2").note = "";
     worksheet.getCell("J3").note = "";
