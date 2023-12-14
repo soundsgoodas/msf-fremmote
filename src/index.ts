@@ -77,12 +77,12 @@ export async function getReport({
   }
 
   if (clearNotes) {
-    worksheet.getCell("H6").note = "";
-    worksheet.getCell("J2").note = "";
-    worksheet.getCell("J3").note = "";
-    worksheet.getCell("J4").note = "";
-    worksheet.getCell("J5").note = "";
-    worksheet.getCell("J6").note = "";
+    worksheet.getCell("H6").note = {};
+    worksheet.getCell("J2").note = {};
+    worksheet.getCell("J3").note = {};
+    worksheet.getCell("J4").note = {};
+    worksheet.getCell("J5").note = {};
+    worksheet.getCell("J6").note = {};
   }
 
   const buffer = await workbook.xlsx.writeBuffer();
