@@ -6,6 +6,7 @@ export async function getReport({
   persons,
   timeSlots,
   labels,
+  clearLabels = false,
 }: ReportInput): Promise<ReportOutput> {
   const file = join(
     __dirname,
@@ -73,6 +74,15 @@ export async function getReport({
     worksheet.getCell("J4").value = labels.rehearsalFormat;
     worksheet.getCell("J5").value = labels.hoursSansTeacher;
     worksheet.getCell("J6").value = labels.hoursWithTeacher;
+  }
+
+  if (clearLabels) {
+    worksheet.getCell("H6").note = "";
+    worksheet.getCell("J2").note = "";
+    worksheet.getCell("J3").note = "";
+    worksheet.getCell("J4").note = "";
+    worksheet.getCell("J5").note = "";
+    worksheet.getCell("J6").note = "";
   }
 
   const buffer = await workbook.xlsx.writeBuffer();
